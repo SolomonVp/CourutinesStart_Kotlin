@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadData() {
+        Log.d("MainActivity", "Load started: $this")
         binding.progress.isVisible = true
         binding.buttonLoad.isEnabled = false
         loadCity {
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
                 binding.tvTemperature.text = it.toString()
                 binding.progress.isVisible = false
                 binding.buttonLoad.isEnabled = true
+                Log.d("MainActivity", "Load finished: $this")
             }
         }
     }
